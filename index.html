@@ -1,1 +1,174 @@
-<!DOCTYPE html><html lang='uk'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>Штучні ялинки з доставкою</title><link rel='stylesheet' href='styles.css'></head><body><header class='header'><div class='container header__row'><div class='logo'>Yalynka<span>Art</span></div><nav class='nav'><a href='#catalog'>Каталог</a><a href='#services'>Послуги</a><a href='#reviews'>Відгуки</a><a href='#order'>Замовити</a></nav><a class='btn btn--primary' href='#order'>Замовити зараз</a></div></header><section class='hero'><div class='overlay'></div><div class='container hero__content'><h1>Ялинки штучні з доставкою додому</h1><p class='subtitle'>Тепла, приємна, вечірня атмосфера свята — без клопотів</p><div class='hero__bullets'><div class='bullet'>Преміум-голки PE/PVC</div><div class='bullet'>Гірлянди warm‑white</div><div class='bullet'>Доставка за 2 години*</div></div><a class='btn btn--dark' href='#catalog'>Обрати ялинку</a></div></section><section id='benefits' class='section section--light'><div class='container benefits'><div class='benefit'><div class='ic'>🎄</div><div><h3>Преміум-якість</h3><p>Щільна хвоя, металевий каркас, гарантія 2 роки.</p></div></div><div class='benefit'><div class='ic'>🚚</div><div><h3>Швидка доставка</h3><p>Кур’єром по місту та області. Монтаж за бажанням.</p></div></div><div class='benefit'><div class='ic'>✨</div><div><h3>Готове сяйво</h3><p>Опція встановлених гірлянд warm‑white.</p></div></div><div class='benefit'><div class='ic'>♻️</div><div><h3>Еко-підхід</h3><p>Багаторазове використання, мінімум сміття.</p></div></div></div></section><section id='catalog' class='section'><div class='container'><h2>Каталог ялинок</h2><div class='cards'><article class='card'><img src='https://images.unsplash.com/photo-1608889175155-7a1c3b59eae1?q=80&w=800&auto=format&fit=crop'><div class='card__body'><h3>Маленька</h3><p class='muted'>1.2 м • 3 секції • основа</p><div class='price'>600 грн</div><button class='btn btn--primary' data-product='Маленька 1.2 м' data-price='600'>Замовити</button></div></article><article class='card'><img src='https://images.unsplash.com/photo-1609220136736-44316d0f99e3?q=80&w=800&auto=format&fit=crop'><div class='card__body'><h3>Середня</h3><p class='muted'>1.8 м • 3 секції • основа</p><div class='price'>1000 грн</div><button class='btn btn--primary' data-product='Середня 1.8 м' data-price='1000'>Замовити</button></div></article><article class='card'><img src='https://images.unsplash.com/photo-1543584759-1b78c285ea0b?q=80&w=800&auto=format&fit=crop'><div class='card__body'><h3>Велика</h3><p class='muted'>2.4 м • 4 секції • основа</p><div class='price'>1800 грн</div><button class='btn btn--primary' data-product='Велика 2.4 м' data-price='1800'>Замовити</button></div></article></div></div></section><section id='services' class='section section--light'><div class='container'><h2>Додаткові послуги</h2><div class='features'><div class='feature'><span>🎀</span><div><h4>Декор під ключ</h4><p>Приїдемо та прикрасимо: від гірлянд до іграшок.</p></div></div><div class='feature'><span>🛍️</span><div><h4>Набори іграшок</h4><p>Класичні, сканди, gold — на вибір.</p></div></div><div class='feature'><span>🔧</span><div><h4>Збірка/розбір</h4><p>Після свят — акуратне пакування для зберігання.</p></div></div></div></div></section><section id='reviews' class='section'><div class='container'><h2>Відгуки</h2><div class='reviews'><blockquote><p>“Ялинка виглядає як жива. Доставка в той же вечір!”</p><cite>— Олена М.</cite></blockquote><blockquote><p>“Замовили з гірляндами — увімкнули і готово. Рекомендую.”</p><cite>— Андрій Р.</cite></blockquote></div></div></section><section id='order' class='section section--order'><div class='container order'><div class='order__text'><h2>Оформити замовлення</h2><p class='muted'>Залиште контакти — ми передзвонимо для підтвердження.</p><ul class='ticks'><li>Гарантія 24 місяці</li><li>Оплата готівкою/картою кур'єру</li><li>Безкоштовна підставка в комплекті</li></ul></div><form id='orderForm' class='form' method='POST' data-action-php='../php-backend/send_order.php' data-action-java='http://localhost:8080/api/order' novalidate><div class='form__row'><label>Ім’я <input type='text' name='name' required></label><label>Телефон <input type='tel' name='phone' required pattern='\+?\d[\d\s\-\(\)]{8,}'></label></div><div class='form__row'><label>Ялинка <select name='product' id='productSelect'><option value='Маленька 1.2 м'>Маленька 1.2 м — 600 грн</option><option value='Середня 1.8 м'>Середня 1.8 м — 1000 грн</option><option value='Велика 2.4 м'>Велика 2.4 м — 1800 грн</option></select></label><label>Адреса <input type='text' name='address'></label></div><label>Коментар <textarea name='comment' rows='3'></textarea></label><input type='hidden' name='utm' id='utmField' value=''><button type='submit' class='btn btn--dark btn--block'>Відправити замовлення</button><p id='formMsg' class='form__msg' role='status' aria-live='polite'></p></form></div></section><footer class='footer'><div class='container footer__row'><div class='logo'>Yalynka<span>Art</span></div><div class='copy'>© <span id='y'></span> YalynkaArt</div><div class='soc'><a href='https://t.me/' target='_blank' rel='noopener'>Telegram</a><a href='viber://chat' target='_blank' rel='noopener'>Viber</a><a href='https://instagram.com/' target='_blank' rel='noopener'>Instagram</a></div></div></footer><script src='script.js'></script></body></html>
+<!DOCTYPE html>
+<html lang='uk'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Штучні ялинки з доставкою</title>
+    <link rel='stylesheet' href='styles.css'>
+</head>
+
+<body>
+    <header class='header'>
+        <div class='container header__row'>
+            <div class='logo'>Yalynka<span>Art</span></div>
+            <nav class='nav'><a href='#catalog'>Каталог</a><a href='#services'>Послуги</a><a
+                    href='#reviews'>Відгуки</a><a href='#order'>Замовити</a></nav><a class='btn btn--primary'
+                href='#order'>Замовити зараз</a>
+        </div>
+    </header>
+    <section class='hero'>
+        <div class='overlay'></div>
+        <div class='container hero__content'>
+            <h1>Ялинки штучні з доставкою додому</h1>
+            <p class='subtitle'>Тепла, приємна, вечірня атмосфера свята — без клопотів</p>
+            <div class='hero__bullets'>
+                <div class='bullet'>Преміум-голки PE/PVC</div>
+                <div class='bullet'>Гірлянди warm‑white</div>
+                <div class='bullet'>Доставка за 2 години*</div>
+            </div><a class='btn btn--dark' href='#catalog'>Обрати ялинку</a>
+        </div>
+    </section>
+    <section id='benefits' class='section section--light'>
+        <div class='container benefits'>
+            <div class='benefit'>
+                <div class='ic'>🎄</div>
+                <div>
+                    <h3>Преміум-якість</h3>
+                    <p>Щільна хвоя, металевий каркас, гарантія 2 роки.</p>
+                </div>
+            </div>
+            <div class='benefit'>
+                <div class='ic'>🚚</div>
+                <div>
+                    <h3>Швидка доставка</h3>
+                    <p>Кур’єром по місту та області. Монтаж за бажанням.</p>
+                </div>
+            </div>
+            <div class='benefit'>
+                <div class='ic'>✨</div>
+                <div>
+                    <h3>Готове сяйво</h3>
+                    <p>Опція встановлених гірлянд warm‑white.</p>
+                </div>
+            </div>
+            <div class='benefit'>
+                <div class='ic'>♻️</div>
+                <div>
+                    <h3>Еко-підхід</h3>
+                    <p>Багаторазове використання, мінімум сміття.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id='catalog' class='section'>
+        <div class='container'>
+            <h2>Каталог ялинок</h2>
+            <div class='cards'>
+                <article class='card'><img
+                        src='https://images.unsplash.com/photo-1608889175155-7a1c3b59eae1?q=80&w=800&auto=format&fit=crop'>
+                    <div class='card__body'>
+                        <h3>Маленька</h3>
+                        <p class='muted'>1.2 м • 3 секції • основа</p>
+                        <div class='price'>600 грн</div><button class='btn btn--primary' data-product='Маленька 1.2 м'
+                            data-price='600'>Замовити</button>
+                    </div>
+                </article>
+                <article class='card'><img
+                        src='https://images.unsplash.com/photo-1609220136736-44316d0f99e3?q=80&w=800&auto=format&fit=crop'>
+                    <div class='card__body'>
+                        <h3>Середня</h3>
+                        <p class='muted'>1.8 м • 3 секції • основа</p>
+                        <div class='price'>1000 грн</div><button class='btn btn--primary' data-product='Середня 1.8 м'
+                            data-price='1000'>Замовити</button>
+                    </div>
+                </article>
+                <article class='card'><img
+                        src='https://images.unsplash.com/photo-1543584759-1b78c285ea0b?q=80&w=800&auto=format&fit=crop'>
+                    <div class='card__body'>
+                        <h3>Велика</h3>
+                        <p class='muted'>2.4 м • 4 секції • основа</p>
+                        <div class='price'>1800 грн</div><button class='btn btn--primary' data-product='Велика 2.4 м'
+                            data-price='1800'>Замовити</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section id='services' class='section section--light'>
+        <div class='container'>
+            <h2>Додаткові послуги</h2>
+            <div class='features'>
+                <div class='feature'><span>🎀</span>
+                    <div>
+                        <h4>Декор під ключ</h4>
+                        <p>Приїдемо та прикрасимо: від гірлянд до іграшок.</p>
+                    </div>
+                </div>
+                <div class='feature'><span>🛍️</span>
+                    <div>
+                        <h4>Набори іграшок</h4>
+                        <p>Класичні, сканди, gold — на вибір.</p>
+                    </div>
+                </div>
+                <div class='feature'><span>🔧</span>
+                    <div>
+                        <h4>Збірка/розбір</h4>
+                        <p>Після свят — акуратне пакування для зберігання.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id='reviews' class='section'>
+        <div class='container'>
+            <h2>Відгуки</h2>
+            <div class='reviews'>
+                <blockquote>
+                    <p>“Ялинка виглядає як жива. Доставка в той же вечір!”</p><cite>— Олена М.</cite>
+                </blockquote>
+                <blockquote>
+                    <p>“Замовили з гірляндами — увімкнули і готово. Рекомендую.”</p><cite>— Андрій Р.</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+    <section id='order' class='section section--order'>
+        <div class='container order'>
+            <div class='order__text'>
+                <h2>Оформити замовлення</h2>
+                <p class='muted'>Залиште контакти — ми передзвонимо для підтвердження.</p>
+                <ul class='ticks'>
+                    <li>Гарантія 24 місяці</li>
+                    <li>Оплата готівкою/картою кур'єру</li>
+                    <li>Безкоштовна підставка в комплекті</li>
+                </ul>
+            </div>
+            <form id='orderForm' class='form' method='POST' data-action-php='send_order.php'
+                data-action-java='http://localhost:8080/api/order' novalidate>
+                <div class='form__row'><label>Ім’я <input type='text' name='name' required></label><label>Телефон <input
+                            type='tel' name='phone' required pattern='\+?\d[\d\s\-\(\)]{8,}'></label></div>
+                <div class='form__row'><label>Ялинка <select name='product' id='productSelect'>
+                            <option value='Маленька 1.2 м'>Маленька 1.2 м — 600 грн</option>
+                            <option value='Середня 1.8 м'>Середня 1.8 м — 1000 грн</option>
+                            <option value='Велика 2.4 м'>Велика 2.4 м — 1800 грн</option>
+                        </select></label><label>Адреса <input type='text' name='address'></label></div><label>Коментар
+                    <textarea name='comment' rows='3'></textarea></label><input type='hidden' name='utm' id='utmField'
+                    value=''><button type='submit' class='btn btn--dark btn--block'>Відправити замовлення</button>
+                <p id='formMsg' class='form__msg' role='status' aria-live='polite'></p>
+            </form>
+        </div>
+    </section>
+    <footer class='footer'>
+        <div class='container footer__row'>
+            <div class='logo'>Yalynka<span>Art</span></div>
+            <div class='copy'>© <span id='y'></span> YalynkaArt</div>
+            <div class='soc'><a href='https://t.me/' target='_blank' rel='noopener'>Telegram</a><a href='viber://chat'
+                    target='_blank' rel='noopener'>Viber</a><a href='https://instagram.com/' target='_blank'
+                    rel='noopener'>Instagram</a></div>
+        </div>
+    </footer>
+    <script src='script.js'></script>
+</body>
+
+</html>

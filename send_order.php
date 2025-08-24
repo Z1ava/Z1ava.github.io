@@ -1,1 +1,27 @@
-<?php header('Content-Type: application/json; charset=utf-8'); header('Access-Control-Allow-Origin: *'); $BOT_TOKEN='PASTE_YOUR_TELEGRAM_BOT_TOKEN_HERE'; $CHAT_ID='PASTE_YOUR_CHAT_ID_HERE'; function clean($v){return htmlspecialchars(trim($v),ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8');} $name=clean($_POST['name']??''); $phone=clean($_POST['phone']??''); if(!$name||!$phone){echo json_encode(['ok'=>false,'error'=>'Заповніть ім’я та телефон']); exit;} $product=clean($_POST['product']??''); $address=clean($_POST['address']??''); $comment=clean($_POST['comment']??''); $utm=clean($_POST['utm']??''); $ip=$_SERVER['REMOTE_ADDR']??''; $lines=["🎄 *Нове замовлення (штучна ялинка)*","👤 Ім’я: $name","📞 Телефон: $phone","🛍️ Товар: $product", $address?"📦 Адреса: $address":null, $comment?"💬 Коментар: $comment":null, $utm?"🔗 Джерело: $utm":null, "🌐 IP: $ip"]; $lines=array_filter($lines); $text=implode("\n",$lines); $send_url="https://api.telegram.org/bot{$BOT_TOKEN}/sendMessage"; $post=['chat_id'=>$CHAT_ID,'text'=>$text,'parse_mode'=>'Markdown']; $ch=curl_init(); curl_setopt_array($ch,[CURLOPT_URL=>$send_url,CURLOPT_POST=>true,CURLOPT_RETURNTRANSFER=>true,CURLOPT_POSTFIELDS=>$post,CURLOPT_TIMEOUT=>10,CURLOPT_SSL_VERIFYPEER=>true]); $response=curl_exec($ch); $errno=curl_errno($ch); $code=curl_getinfo($ch,CURLINFO_HTTP_CODE); curl_close($ch); if($errno!==0||$code!==200){echo json_encode(['ok'=>false,'error'=>'Не вдалося надіслати в Telegram']); exit;} echo json_encode(['ok'=>true]);
+<?php
+
+/* https://api.telegram.org/botXXXXXXXXXXXXXXXXXXXXXXX/getUpdates,
+где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
+
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$token = "8139580865:AAGe-6nYfYMldaa9AkIzvtaxsGKAPwTpM70";
+$chat_id = "-509095100";
+$arr = array(
+  'Заказ Органайзер2-Имя пользователя: ' => $name,
+  'Телефон: ' => $phone,
+ 
+);
+
+foreach($arr as $key => $value) {
+  $txt .= "<b>".$key."</b> ".$value."%0A";
+};
+
+$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
+
+if ($sendToTelegram) {
+  header('Location: thank-you.html');
+} else {
+  echo "Error";
+}
+?>
